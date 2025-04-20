@@ -1,8 +1,8 @@
 import TourCard from './TourCard'
 
-function Gallery({ tours, loading, error, onRemove, onRefresh }) {
-  if (loading) return <p className="text-center">Loading...</p>
-  if (error) return <p className="text-center text-red-500">{error}</p>
+function Gallery({ tours, loading, error, onRemove, onRefresh }) { // Display the list of tours
+  if (loading) return <p className="text-center">Loading...</p> // Show loading state
+  if (error) return <p className="text-center text-red-500">{error}</p> // Show error state
   if (tours.length === 0) {
     return (
       <div className="text-center">
@@ -17,7 +17,7 @@ function Gallery({ tours, loading, error, onRemove, onRefresh }) {
     )
   }
 
-  return (
+  return ( // Display the tours in a grid
     <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
       {tours.map(tour => (
         <TourCard key={tour.id} tour={tour} onRemove={onRemove} />
