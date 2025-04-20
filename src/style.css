@@ -38,7 +38,7 @@ body {
   }
   
   .tour-price {
-    color: #0a9396;
+    color: #0f960a;
     font-weight: bold;
   }
   
@@ -49,9 +49,9 @@ body {
   }
   
   .remove-btn {
-    background-color: #e63946;
+    background-color: #df2134;
     color: white;
-    border: none;
+    border: black;
     padding: 0.6rem 1rem;
     margin-top: 1rem;
     cursor: pointer;
@@ -65,7 +65,7 @@ body {
   .read-more-toggle {
     background: none;
     border: none;
-    color: #1d4ed8;
+    color: #6081dd;
     font-weight: bold;
     margin-left: 0.5rem;
     cursor: pointer;
