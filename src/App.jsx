@@ -3,16 +3,16 @@ import Gallery from './components/Gallery.jsx'
 import DestinationSelector from './components/DestinationSelector.jsx'
 import './style.css';
 
-const API_URL = '/api/react-tours-project'
+const API_URL = '/api/react-tours-project' // Adjust this URL based on your server setup
 
-function App() {
+function App() { // Main component
   const [tours, setTours] = useState([])
   const [filteredTours, setFilteredTours] = useState([])
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
   const [selectedDestination, setSelectedDestination] = useState('All')
 
-  const fetchTours = async () => {
+  const fetchTours = async () => { // Fetch tours from the API
     setLoading(true)
     try {
       const res = await fetch(API_URL)
@@ -27,11 +27,11 @@ function App() {
     }
   }
 
-  useEffect(() => {
+  useEffect(() => { // Fetch tours on component mount
     fetchTours()
   }, [])
 
-  useEffect(() => {
+  useEffect(() => { // Filter tours based on selected destination
     if (selectedDestination === 'All') {
       setFilteredTours(tours)
     } else {
@@ -39,16 +39,16 @@ function App() {
     }
   }, [selectedDestination, tours])
 
-  const removeTour = (id) => {
+  const removeTour = (id) => { // Remove a tour from the list
     setFilteredTours(prev => prev.filter(tour => tour.id !== id))
   }
 
-  const handleRefresh = () => {
+  const handleRefresh = () => { // Refresh the tour list
     fetchTours()
     setSelectedDestination('All')
   }
 
-  return (
+  return ( // Main render function
     <main className="p-4 max-w-5xl mx-auto">
       <h1 className="text-3xl font-bold text-center mb-4">🌍 Tour Destination Selector</h1>
       <DestinationSelector
