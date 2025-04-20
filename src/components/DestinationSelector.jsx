@@ -1,7 +1,7 @@
-function DestinationSelector({ tours, selected, onSelect }) {
+function DestinationSelector({ tours, selected, onSelect }) { // Dropdown to select destination
     const destinations = ['All', ...new Set(tours.map(t => t.name))]
   
-    return (
+    return ( // Render the dropdown
       <div className="mb-6 text-center">
         <select
           value={selected}
